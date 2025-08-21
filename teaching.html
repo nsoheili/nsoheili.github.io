@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negar: Teaching</title>
+    <style>
+        :root { --accent: rgb(153, 0, 0); --text:#111; --muted:#666; --border:#ddd; --maxw:1000px; }
+        body { margin:0; font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color:var(--text);} 
+        a { color:inherit; text-decoration:none; }
+        .container { max-width: var(--maxw); margin: 0 auto; padding: 24px 16px 48px; }
+        .site-header { text-align:center; }
+        .site-title { font-weight:700; color:var(--accent); font-size:2.2rem; margin:8px 0 12px; }
+        .nav-tabs { display:flex; gap:28px; justify-content:center; padding:12px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:28px; }
+        .nav-tabs a { padding:6px 0; }
+        .nav-tabs a.active { color:var(--accent); font-weight:600; }
+        .content { max-width: 900px; margin: 0 auto; }
+        .content p { margin: 0 0 1rem; line-height: 1.7; text-align: justify; }
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin: 0 0 1rem; line-height: 1.7; text-align: justify; }
+        .section-title { font-weight: 700; color: var(--accent); text-decoration: underline; }
+        /* Courses: collapsible items */
+        .courses { list-style: none; padding-left: 0; }
+        .course { border-bottom: 1px solid var(--border); padding: 10px 0; }
+        .course-title { cursor: pointer; color: #1a73e8; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+        .course-title:hover { text-decoration: underline; }
+        .badge { background: #f1f3f4; color: #444; border: 1px solid #e0e0e0; border-radius: 999px; padding: 2px 8px; font-size: 0.85rem; font-weight: 500; }
+        .course-desc { display: none; margin-top: 8px; color: var(--text); }
+        .course-desc.open { display: block; }
+        .muted { color: var(--muted); font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="site-title">Negar Soheili</div>
+            <nav class="nav-tabs">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Research</a>
+                <a href="teaching.html" class="active">Teaching</a>
+                <a href="students.html">Prospective PhD Students</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <!-- Title removed per request -->
+            <ul class="courses">
+                <li class="course">
+                    <div class="course-title" role="button" tabindex="0" aria-expanded="false">IDS 435 – Optimization for Analytics</div>
+                    <div class="course-desc" aria-hidden="true">
+                        This course introduces students to the foundations of optimization and its applications in business and data-driven decision-making. Topics include convex and non-convex optimization, first-order methods, duality, linear and mixed-integer programming, and reinforcement learning. Students learn how to formulate real-world problems as optimization models and solve them using Python, with applications spanning machine learning, finance, healthcare, and energy.
+                    </div>
+                </li>
+                <li class="course">
+                    <div class="course-title" role="button" tabindex="0" aria-expanded="false">IDS 472/572 – Data Mining for Business</div>
+                    <div class="course-desc" aria-hidden="true">
+                        This course provides a hands-on introduction to data mining techniques for extracting patterns and making predictions from large datasets. Students explore methods such as decision trees, random forests, logistic regression, support vector machines, neural networks, and clustering, while learning to evaluate and validate models. The course emphasizes practical applications in business contexts and uses Python for implementation.
+                    </div>
+                </li>
+                <li class="course">
+                    <div class="course-title" role="button" tabindex="0" aria-expanded="false">IDS 570 – Statistics for Management</div>
+                    <div class="course-desc" aria-hidden="true">
+                        This course introduces the fundamentals of statistical analysis for business decision-making. Students learn how to collect, summarize, and interpret data, understand probability and randomness, and apply statistical inference to guide managerial decisions. The course emphasizes practical applications through data visualization, hypothesis testing, and regression, with R/RStudio used as a tool for analysis.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+// Toggle course descriptions on click or Enter/Space
+document.addEventListener('DOMContentLoaded', function () {
+  const titles = document.querySelectorAll('.course-title');
+  titles.forEach(function(title){
+    const toggle = function(){
+      const desc = title.nextElementSibling;
+      const isOpen = desc.classList.toggle('open');
+      title.setAttribute('aria-expanded', String(isOpen));
+      desc.setAttribute('aria-hidden', String(!isOpen));
+    };
+    title.addEventListener('click', toggle);
+    title.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+});
+</script>
+</html>

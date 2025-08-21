@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negar: Research</title>
+    <style>
+        :root { --accent: rgb(153, 0, 0); --text:#111; --muted:#666; --border:#ddd; --maxw:1000px; }
+        body { margin:0; font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color:var(--text);} 
+        a { color:inherit; text-decoration:none; }
+        .container { max-width: var(--maxw); margin: 0 auto; padding: 24px 16px 48px; }
+        .site-header { text-align:center; }
+        .site-title { font-weight:700; color:var(--accent); font-size:2.2rem; margin:8px 0 12px; }
+        .nav-tabs { display:flex; gap:28px; justify-content:center; padding:12px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:28px; }
+        .nav-tabs a { padding:6px 0; }
+        .nav-tabs a.active { color:var(--accent); font-weight:600; }
+        .content { max-width: 900px; margin: 0 auto; }
+        .content p { margin: 0 0 1rem; line-height: 1.7; text-align: justify; }
+        .content p:last-of-type { margin-bottom: 1.5rem; }
+        .content ul { list-style: none; padding-left: 0; }
+        .content li { margin: 0 0 1rem; line-height: 1.7; text-align: justify; }
+        .section-title { font-weight: 700; color: var(--accent); text-decoration: underline; margin-top: 12px; display: block; }
+        /* Publications styling */
+        .pub-list { list-style: none; padding-left: 0; }
+        .pub { margin: 0 0 1.1rem; }
+        .pub-title a { color: #1a73e8; text-decoration: none; font-weight: 600; }
+        .pub-title a:hover { text-decoration: underline; }
+        .pub-authors { color: var(--muted); }
+        .pub-venue { margin-top: 2px; }
+        /* Extra spacing between Submitted list and next section title */
+        .content .pub-list + .section-title { margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="site-title">Negar Soheili</div>
+            <nav class="nav-tabs">
+                <a href="index.html">Home</a>
+                <a href="publications.html" class="active">Research</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="students.html">Prospective PhD Students</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <p>
+                In many research projects, acceleration of solution methods is possible only when problems possess favorable mathematical properties, such as smoothness, strong convexity, or error-bound conditions. But what happens when a problem is poorly conditioned and lacks this convenient structure? One of my research interests focuses precisely on this challenge: can we reshape the mathematical landscape of a difficult problem to make it easier to solve? My work on feasibility problems demonstrates that through strategic preconditioning and rescaling techniques, it is possible to transform a computationally challenging system into one that algorithms can handle efficiently, then map the solution back to the original problem. This geometric transformation approach has achieved exponential improvements in algorithmic speed, showing that carefully designed mathematical reformulations can fundamentally expand what becomes computationally tractable.
+            </p>
+            <p>
+                I am also interested in developing projection-free first-order methods for solving large-scale constrained optimization problems. These methods avoid computationally expensive projection operations that can become bottlenecks in high-dimensional settings. One example of my work in this area focuses on problems where satisfying constraints is just as critical as optimizing the objective function. In machine learning, for example, fairness constraints may determine whether a classifier can be deployed in practice, while in operations research, risk or resource limitations often represent hard boundaries that cannot be violated. For these applications, I have developed first-order optimization methods that guarantee feasibility throughout the entire optimization process, not just at convergence. Using level-set formulations, these methods trace out a path of feasible solutions that can adapt to stochastic or high-dimensional environments while avoiding projection steps. By seamlessly integrating feasibility preservation with scalability, these algorithms enable reliable solution of constrained problems in domains where constraint satisfaction is paramount.
+            </p>
+            <p>
+                I am also developing first-order methods for large-scale Approximate Dynamic Programming (ADP) models, which provide powerful frameworks for sequential decision-making under uncertainty. Despite their potential, ADP models remain notoriously difficult to solve at scale due to their complexity. First-order methods, with their modest memory requirements and natural scalability, appear well-suited for these problems, yet efficient algorithms specifically tailored for ADP structures remain relatively underexplored. My research addresses this gap by creating algorithms that strategically exploit the mathematical structure inherent in ADP formulations while preserving their theoretical performance guarantees. The goal is to enable solution of high-dimensional decision problems that would otherwise be computationally intractable, thereby expanding the practical reach of ADP methodology across diverse application domains.
+            </p>
+            <span class="section-title">Submitted and Working Papers</span>
+            <ul class="pub-list">
+                <li class="pub">
+                    <div class="pub-title">Doubly Randomized Fluid Approximation</div>
+                    <div class="pub-authors">N. Soheili, S. Rahnama, S. Nadarajah, and A. Aminipanah</div>
+                    <div class="pub-venue"><strong>SIAM Journal on Optimization</strong>, 2025 — In preparation</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title">Weakly Time-Coupled Approximation of Markov Decision Processes</div>
+                    <div class="pub-authors">N. Soheili, S. Nadarajah, and B. Yang</div>
+                    <div class="pub-venue"><strong>Management Science</strong>, 2025 — In preparation</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title">An adaptive parameter-free and projection-free restarting level set method for constrained convex optimization under the error bound condition</div>
+                    <div class="pub-authors">Q. Lin, N. Soheili, R. Ma, and S. Nadarajah</div>
+                    <div class="pub-venue"><strong>Journal of Machine Learning Research</strong>, 2025 — Under second-round review</div>
+                </li>
+            </ul>
+
+            <span class="section-title">Published Papers</span>
+            <ul class="pub-list">
+                <li class="pub">
+                    <div class="pub-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3512665" target="_blank" rel="noopener noreferrer">Self-guided approximate linear programs: randomized multi-shot approximation of discounted cost Markov decision processes</a></div>
+                    <div class="pub-authors">P. Pakiman, S. Nadarajah, N. Soheili, and Q. Lin</div>
+                    <div class="pub-venue"><strong>Management Science</strong>, 2024</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://link.springer.com/rwe/10.1007/978-3-030-54621-2_868-1" target="_blank" rel="noopener noreferrer">Level set methods for solving constrained convex optimization problems</a></div>
+                    <div class="pub-authors">N. Soheili</div>
+                    <div class="pub-venue"><strong>Encyclopedia of Optimization</strong>, 2023</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://www.tandfonline.com/doi/abs/10.1080/10556788.2022.2119234" target="_blank" rel="noopener noreferrer">Implementation of a projection and rescaling algorithm for second-order conic feasibility problems</a></div>
+                    <div class="pub-authors">J. Peña and N. Soheili</div>
+                    <div class="pub-venue"><strong>Optimization Methods and Software</strong>, 2022</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://pubsonline-informs-org.proxy.cc.uic.edu/doi/10.1287/moor.2021.1235" target="_blank" rel="noopener noreferrer">Projection and rescaling algorithm for finding the most interior solutions to polyhedral conic systems</a></div>
+                    <div class="pub-authors">J. Peña and N. Soheili</div>
+                    <div class="pub-venue"><strong>Mathematics of Operations Research</strong>, 2022</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://jmlr.org/papers/v21/19-1022.html" target="_blank" rel="noopener noreferrer">A data efficient and feasible level-set method for constrained stochastic optimization with expectation constraints</a></div>
+                    <div class="pub-authors">Q. Lin, S. Nadarajah, N. Soheili, and T. Yang</div>
+                    <div class="pub-venue"><strong>Journal of Machine Learning Research</strong>, 2020</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://parshanpakiman.github.io/Files/Docs/self_guided_ALPs_NeurIPS_%20Self_supervised_Learning.pdf" target="_blank" rel="noopener noreferrer">Self-guided approximate linear programs</a></div>
+                    <div class="pub-authors">P. Pakiman, S. Nadarajah, N. Soheili, and Q. Lin</div>
+                    <div class="pub-venue"><strong>NeurIPS Workshop on Self-Supervised Learning - Theory and Practice</strong>, 2020</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2019.3289" target="_blank" rel="noopener noreferrer">Revisiting approximate linear programming: constraint violation learning with applications to inventory control and energy storage</a></div>
+                    <div class="pub-authors">Q. Lin, S. Nadarajah, and N. Soheili</div>
+                    <div class="pub-venue"><strong>Management Science</strong>, 2020</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://www.tandfonline.com/doi/abs/10.1080/10556788.2019.1615910" target="_blank" rel="noopener noreferrer">Computational performance of a projection and rescaling algorithm</a></div>
+                    <div class="pub-authors">J. Peña and N. Soheili</div>
+                    <div class="pub-venue"><strong>Optimization Methods and Software</strong>, 2019</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://epubs-siam-org.proxy.cc.uic.edu/doi/10.1137/17M1152334" target="_blank" rel="noopener noreferrer">A level-set method for convex optimization with a feasible solution path</a></div>
+                    <div class="pub-authors">Q. Lin, S. Nadarajah, and N. Soheili</div>
+                    <div class="pub-venue"><strong>SIAM Journal on Optimization</strong>, 2018</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s10107-016-1105-4" target="_blank" rel="noopener noreferrer">Solving conic systems via projection and rescaling</a></div>
+                    <div class="pub-authors">J. Peña and N. Soheili</div>
+                    <div class="pub-venue"><strong>Mathematical Programming</strong>, 2017</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://epubs-siam-org.proxy.cc.uic.edu/doi/10.1137/15M1009937" target="_blank" rel="noopener noreferrer">On the von Neumann and Frank-Wolfe algorithms with away steps</a></div>
+                    <div class="pub-authors">J. Peña, D. Rodriguez, and N. Soheili</div>
+                    <div class="pub-venue"><strong>SIAM Journal on Optimization</strong>, 2016</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s10107-015-0860-y" target="_blank" rel="noopener noreferrer">A deterministic rescaled perceptron algorithm</a></div>
+                    <div class="pub-authors">J. Peña and N. Soheili</div>
+                    <div class="pub-venue"><strong>Mathematical Programming</strong>, 2016</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s11590-013-0721-7" target="_blank" rel="noopener noreferrer">Some preconditioners for systems of linear inequalities</a></div>
+                    <div class="pub-authors">J. Peña, N. Soheili, and V. Roshchina</div>
+                    <div class="pub-venue"><strong>Optimization Letters</strong>, 2014</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0885064X14000168" target="_blank" rel="noopener noreferrer">A condition-based algorithm for solving polyhedral feasibility problems</a></div>
+                    <div class="pub-authors">N. Soheili and J. Peña</div>
+                    <div class="pub-venue"><strong>Journal of Complexity</strong>, 2014</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-319-00200-2_17" target="_blank" rel="noopener noreferrer">A primal-dual smooth perceptron-von Neumann algorithm</a></div>
+                    <div class="pub-authors">N. Soheili and J. Peña</div>
+                    <div class="pub-venue"><strong>Discrete Geometry and Optimization</strong>, 2013</div>
+                </li>
+                <li class="pub">
+                    <div class="pub-title"><a href="https://epubs-siam-org.proxy.cc.uic.edu/doi/10.1137/110848955" target="_blank" rel="noopener noreferrer">A smooth perceptron algorithm</a></div>
+                    <div class="pub-authors">N. Soheili and J. Peña</div>
+                    <div class="pub-venue"><strong>SIAM Journal on Optimization</strong>, 2012</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
