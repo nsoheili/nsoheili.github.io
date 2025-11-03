@@ -27,17 +27,23 @@
         /* Hero section */
         .hero { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; padding-top: 20px; }
         .content { border-top: 1px solid var(--border); padding-top: 24px; }
+        .content h2 { font-family: Georgia, "Times New Roman", Times, serif; font-size: 1.75rem; margin: 28px 0 12px; color: #111; }
         .content p { margin: 0 0 1rem; line-height: 1.75; color: #243041; }
         .content p:first-child { margin-top: 0; }
-        .content ol { margin: 0 0 0 20px; padding-left: 20px; }
+        /* Use discs even though list is ordered, to mimic screenshot bullets without changing content */
+        .content ol { margin: 0 0 0 22px; padding-left: 22px; list-style: disc; }
         .content li { margin: 0 0 1rem; line-height: 1.75; }
         .content li strong { color: #111827; }
 
         .sidebar { position: sticky; top: 16px; }
         .profile-img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: block; }
         .card { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 16px; color: var(--muted); font-size: 0.98rem; }
-        .email { display: flex; align-items: center; gap: 10px; }
-        .email svg { width: 18px; height: 18px; color: #111; opacity: 0.85; }
+        .info { display: flex; align-items: center; gap: 10px; margin: 10px 0; color: #1f2937; }
+        .info svg { width: 18px; height: 18px; color: #111; opacity: 0.85; }
+        .keywords { border-top: 1px solid var(--border); margin-top: 18px; padding-top: 16px; }
+        .keywords-title { font-weight: 600; color: #111; margin: 0 0 8px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { font-size: 0.85rem; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); background: #f9fafb; color: #111; }
 
         /* Responsive */
         @media (max-width: 900px) {
@@ -62,16 +68,18 @@
 
         <section class="hero">
             <div class="content">
+                <h2>About</h2>
                 <p>
                     I am an Associate Professor of Business Analytics in the Information and Decision Sciences Department at the College of Business, University of Illinois at Chicago (UIC). I earned my PhD in Operations Research from the Tepper School of Business at Carnegie Mellon University in 2014. During my time at UIC, I also co-founded the PhD program in Information and Decision Sciences while serving as the Director of Graduate Studies, helping to shape its structure and vision for doctoral education in the department.
                 </p>
                 <p>
                     My research focuses on developing methods for large-scale optimization, with an emphasis on scalable approaches for convex optimization in machine learning and decision-making under uncertainty. Specifically, I am interested in designing efficient first-order methods. My work is organized into three key areas:
                 </p>
+                <h2>Research Focus</h2>
                 <ol>
-                    <li><strong>Problem Geometry and Algorithm Acceleration:</strong> I develop preconditioning and rescaling techniques that transform difficult optimization problems into easier ones by improving their mathematical structure. The key insight is that by reshaping a problem's geometry, we can achieve exponential speedups in solution times, then map results back to the original formulation.</li>
-                    <li><strong>Constrained Optimization with Feasibility Guarantees:</strong> I design first-order methods for problems where satisfying constraints is just as important as finding optimal solutions. These algorithms maintain feasibility throughout the optimization process, making them suitable for applications like machine learning with fairness constraints where constraint violations cannot be tolerated.</li>
-                    <li><strong>Large-Scale Sequential Decision Making:</strong> First-order methods power several state-of-the-art approaches for approximating MDPs due to their scalability and low memory usage. However, further advancements are needed to enhance their applicability to solving real-world decision-making problems at scale. I work on developing efficient algorithms for such problems under uncertainty.</li>
+                    <li><strong>Problem Geometry and Algorithm Acceleration</strong> — I develop preconditioning and rescaling techniques that transform difficult optimization problems into easier ones by improving their mathematical structure. The key insight is that by reshaping a problem's geometry, we can achieve exponential speedups in solution times, then map results back to the original formulation.</li>
+                    <li><strong>Constrained Optimization with Feasibility Guarantees</strong> — I design first-order methods for problems where satisfying constraints is just as important as finding optimal solutions. These algorithms maintain feasibility throughout the optimization process, making them suitable for applications like machine learning with fairness constraints where constraint violations cannot be tolerated.</li>
+                    <li><strong>Large-Scale Sequential Decision Making</strong> — First-order methods power several state-of-the-art approaches for approximating MDPs due to their scalability and low memory usage. However, further advancements are needed to enhance their applicability to solving real-world decision-making problems at scale. I work on developing efficient algorithms for such problems under uncertainty.</li>
                 </ol>
                 <p>
                     More broadly, my research interests include convex optimization, first-order methods, interior-point methods, linear programming, quadratic programming, feasibility problems, condition measures, markov decision processes, and reinforcement learning.
@@ -80,9 +88,27 @@
             <aside class="sidebar">
                 <img src="negarsoheili.jpg" class="profile-img" alt="Profile Image">
                 <div class="card">
-                    <div class="email">
+                    <div class="info">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="m22 8-10 6L2 8"/></svg>
                         <span>Email: <a href="mailto:nazad@uic.edu">nazad@uic.edu</a></span>
+                    </div>
+                    <div class="info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+                        <span>University of Illinois Chicago</span>
+                    </div>
+                    <div class="info">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M3 10h18"/><path d="M7 21V3h10v18"/></svg>
+                        <span>College of Business</span>
+                    </div>
+                    <div class="keywords">
+                        <div class="keywords-title">Research Keywords</div>
+                        <div class="tags">
+                            <span class="tag">Optimization</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Reinforcement Learning</span>
+                            <span class="tag">Sequential Decision Making</span>
+                            <span class="tag">Large-Scale</span>
+                        </div>
                     </div>
                 </div>
             </aside>
